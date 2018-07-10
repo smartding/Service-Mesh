@@ -64,18 +64,18 @@ pilot-agent的role类型为model包下的Proxy，决定了pilot-agent的“角�
 	
 > istio需要从服务注册中心（service registry）获取微服务注册的情况。当前版本中istio可以对接的服务注册中心类型包括：  
 > 
-1. "Mock"  
-MockRegistry is a service registry that contains 2 hard-coded test services
-2. "Config"  
-ConfigRegistry is a service registry that listens for service entries in a backing ConfigStore
-3. "Kubernetes"  
-KubernetesRegistry is a service registry backed by k8s API server
-4. "Consul"  
-ConsulRegistry is a service registry backed by Consul
-5. "Eureka"  
-EurekaRegistry is a service registry backed by Eureka
-6. "CloudFoundry"  
-CloudFoundryRegistry is a service registry backed by Cloud Foundry.
+>1. "Mock"  
+>MockRegistry is a service registry that contains 2 hard-coded test services
+>2. "Config"  
+>ConfigRegistry is a service registry that listens for service entries in a backing ConfigStore
+>3. "Kubernetes"  
+>KubernetesRegistry is a service registry backed by k8s API server
+>4. "Consul"  
+>ConsulRegistry is a service registry backed by Consul
+>5. "Eureka"  
+>EurekaRegistry is a service registry backed by Eureka
+>6. "CloudFoundry"  
+>CloudFoundryRegistry is a service registry backed by Cloud Foundry.
 
 > [官方about文档](https://istio.io/about/intro/)说当前支持Kubernetes, Nomad with Consul，未来准备支持 Cloud Foundry,Apache Mesos。另外根据[官方的feature成熟度文档](https://istio.io/about/feature-stages/)，当前只有Kubernetes的集成达到stable程度，Consul，Eureka和Cloud Foundry都还是alpha水平
 
