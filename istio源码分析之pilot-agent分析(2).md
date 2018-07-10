@@ -53,12 +53,12 @@ pilot-agent的role类型为model包下的Proxy，决定了pilot-agent的“角�
 	1. Kubernetes
 	2. Consul
 	3. Other
-
-|:--|:--|:--|:--|
-| registry值 | role.IPAddress | rule.ID |role.Domain  |
-|Kubernetes  | 环境变量INSTANCE_IP | 环境变量POD_NAME.环境变量POD_NAMESPACE | 环境变量POD_NAMESPACE.svc.cluster.local |
-|Consul  | private IP,默认127.0.0.1 | IPAddress.service.consul |  service.consul|
-|Other  |private IP,默认127.0.0.1  | IPAddress | “” |
+ 
+| registry值 | role.IPAddress | rule.ID |role.Domain  |  
+|:--|:--|:--|:--| 
+|Kubernetes  | 环境变量INSTANCE_IP | 环境变量POD_NAME.环境变量POD_NAMESPACE | 环境变量POD_NAMESPACE.svc.cluster.local |  
+|Consul  | private IP,默认127.0.0.1 | IPAddress.service.consul |  service.consul|  
+|Other  |private IP,默认127.0.0.1  | IPAddress | “” |  
 
 其中的private ip通过`WaitForPrivateNetwork`函数获得。
 	
