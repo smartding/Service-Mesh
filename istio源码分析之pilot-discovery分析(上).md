@@ -1,10 +1,9 @@
 # Service Mesh深度学习系列（二）| istio源码分析之pilot-discovery模块分析
 本文分析的istio代码版本为0.8.0，commit为0cd8d67，commit时间为2018年6月18日。 
 
-{{TOC}}
 
 ## pilot总体架构 
-![istio architecture](/istioarch.svg)
+![istio architecture](https://camo.githubusercontent.com/919e2e3cd8e4267a00035b813df53902864a3388/68747470733a2f2f63646e2e7261776769742e636f6d2f697374696f2f70696c6f742f6d61737465722f646f632f70696c6f742e737667)
 首先我们回顾一下pilot总体架构，上面是[官方关于pilot的架构图](https://github.com/istio/old_pilot_repo/blob/master/doc/design.md)，因为是old_pilot_repo目录下，可能与最新架构有出入，仅供参考。所谓的pilot包含两个组件：pilot-agent和pilot-discovery。图里的agent对应pilot-agent二进制，proxy对应Envoy二进制，它们两个在同一个容器中，discovery service对应pilot-discovery二进制，在另外一个跟应用分开部署的单独的deployment中。   
 
 1. **discovery service**：从Kubernetes apiserver list/watch `service`、`endpoint`、`pod`、`node`等资源信息，监听istio控制平面配置信息（Kubernetes CRD）， 翻译为Envoy可以直接理解的配置格式。
